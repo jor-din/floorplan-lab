@@ -1,38 +1,76 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+* {
   color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.App-link {
-  color: #61dafb;
+#floorplan{
+  height: 500px;
+  width: 500px;
+  display: grid; 
+  grid-template-columns: 2fr 1fr 1fr 1fr; 
+  grid-template-rows: 2fr 1fr 2fr; 
+  gap: 0px 0px; 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+.bedroom {
+  background-color: #447FAE;
+}
+
+#bed-3 {
+  grid-row: 3 / 4;
+  grid-column: 3 / 5;
+}
+
+.bathroom {
+  background-color: #9FADBD;
+}
+
+#livingroom {
+  background-color: #A86683;
+  grid-row: 1 / 3;
+  grid-column: 2 / 4;
+}
+
+
+.kitchen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  background-color: #BCA5AE;
+  grid-column: 4/5;
+  grid-row: 1/3;
+  grid-template-areas:
+    "oven sink"
+    "kitchen kitchen"
+}
+
+.ktichen-name {
+  grid-area: kitchen
+}
+
+div .kitchen {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row: 1 / 3;
+  grid-column: 4 / 5;
+}
+
+div .kitchen span {
+  align-self: center;
+  text-align: center;
+  grid-column: 1 / 3;
+}
+
+.oven {
+  grid-area: oven;
+  background-color: #ABAE89;
+  align-self: start;
+}
+
+.sink{
+  grid-area: sink;
+  background-color: #5AB7D4;
+  align-self: start;
 }
